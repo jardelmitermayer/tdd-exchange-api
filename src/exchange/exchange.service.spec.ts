@@ -20,5 +20,10 @@ describe('ExchangeService', () => {
       ).rejects.toThrow();
     });
 
+    it('should be not throw if called with valid params', async () => {
+      await expect(
+        service.convertAmount({ from: 'USD', to: 'BRL', amount: 1 }),
+      ).resolves.not.toThrow();
+    });
   });
 });
